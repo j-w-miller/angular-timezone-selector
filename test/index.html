@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="../dist/angular-timezone-selector.css">
+  <link href='style.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-app="demoApp">
+  
+  <h1 class="header">Angular Timezone Selector Demo</h1>
+  <h2 class="subheader">
+    <a class="github-link" href="https://github.com/mishguruorg/angular-timezone-selector">
+      View Module on GitHub <span class="mega-octicon octicon-mark-github"></span>
+    </a>
+  </h2>
+  
+  <div ng-controller="AppCtrl" class="demo">
+    <h3>Selected timezone: <b>{{timezone}}</b></h3>
+    <timezone-selector ng-model="timezone"></timezone-selector>
+  </div>
+  
+  <!-- JS Dependancies -->
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../bower_components/lodash/dist/lodash.min.js"></script>
+  <script src="../bower_components/moment/min/moment.min.js"></script>
+  <script src="../bower_components/moment-timezone/builds/moment-timezone-with-data.min.js"></script>
+  <script src="../bower_components/chosen/chosen.jquery.js"></script>
+  <script src="../bower_components/angular/angular.min.js"></script>
+  <script src="../bower_components/jstzdetect/jstz.min.js"></script>
+  <script src="../dist/angular-timezone-selector.js"></script>
+  
+  <!-- Basic example app -->
+  <script>
+    var app = angular.module('demoApp', ['angular-timezone-selector'])
+
+    app.controller('AppCtrl', ['$scope', function($scope) {
+      $scope.timezone = ''
+    }])
+  </script>
+</body>
+
+</html>
